@@ -1,5 +1,36 @@
-template-repository (1.0-1) unstable; urgency=medium
+golang-github-armon-go-proxyproto (0.1.0-1) unstable; urgency=medium
 
-  * Initial release
+  * Team upload
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+  [ Aloïs Micard ]
+  * update debian/gitlab-ci.yml (using pkg-go-tools/ci-config)
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Database, Bug-Submit.
+  * Update standards version to 4.5.0, no changes needed.
+  * Apply multi-arch hints.
+    + golang-github-armon-go-proxyproto-dev: Add Multi-Arch: foreign.
+
+  [ Mathias Gibbens ]
+  * New upstream release
+  * d/control:
+    - Update Section to golang
+    - Update Standards-Version to 4.7.0 (no changes needed)
+    - Update debhelper-compat to v13
+  * Drop unneeded Files-Excluded from d/copyright
+  * Update d/u/metadata
+  * Update d/watch
+
+ -- Mathias Gibbens <gibmat@debian.org>  Thu, 25 Jul 2024 04:15:56 +0000
+
+golang-github-armon-go-proxyproto (0.0~git20190211.68259f7-2) unstable; urgency=medium
+
+  * d/control: bump standards
+
+ -- Dawid Dziurla <dawidd0811@gmail.com>  Sun, 04 Aug 2019 12:19:43 +0200
+
+golang-github-armon-go-proxyproto (0.0~git20190211.68259f7-1) unstable; urgency=medium
+
+  * Initial release (Closes: #928203)
+
+ -- Dawid Dziurla <dawidd0811@gmail.com>  Mon, 29 Apr 2019 21:47:35 +0200
