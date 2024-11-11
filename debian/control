@@ -1,15 +1,39 @@
-Source: template-repository
-Section: unknown
+Source: golang-github-armon-go-proxyproto
+Section: golang
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Debian Go Packaging Team <team+pkg-go@tracker.debian.org>
+Uploaders:
+ Dawid Dziurla <dawidd0811@gmail.com>,
+Rules-Requires-Root: no
+Build-Depends:
+ debhelper-compat (= 13),
+ dh-golang,
+Build-Depends-Indep:
+ golang-any,
+Standards-Version: 4.7.0
+Homepage: https://github.com/armon/go-proxyproto
+Vcs-Browser: https://salsa.debian.org/go-team/packages/golang-github-armon-go-proxyproto
+Vcs-Git: https://salsa.debian.org/go-team/packages/golang-github-armon-go-proxyproto.git
+XS-Go-Import-Path: github.com/armon/go-proxyproto
+Testsuite: autopkgtest-pkg-go
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: golang-github-armon-go-proxyproto-dev
+Architecture: all
+Depends:
+ ${misc:Depends},
+Multi-Arch: foreign
+Description: Golang package to handle HAProxy Proxy Protocol
+ This library provides the proxyproto package which can be used for
+ servers listening behind HAProxy of Amazon ELB load balancers.
+ Those load balancers support the use of a proxy protocol
+ (http://haproxy.1wt.eu/download/1.5/doc/proxy-protocol.txt),
+ which provides a simple mechansim for the server to get the address
+ of the client instead of the load balancer.
+ .
+ This library provides both a net.Listener and net.Conn implementation that
+ can be used to handle situation in which you may be using the proxy protocol.
+ Only proxy protocol version 1, the human-readable form, is understood.
+ .
+ The only caveat is that one checks for the "PROXY " prefix to determine if
+ the protocol is being used. If that string may occur as part of your input,
+ then it is ambiguous if the protocol is being used and you may have problems.
